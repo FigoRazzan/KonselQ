@@ -18,18 +18,18 @@ Memastikan kolaborasi Flutter App KonselQ antara Seno dan Figo berjalan lancar, 
 ## 👣 Alur Kerja Harian
 
 ### 1. Sebelum Mulai Kerja
-bash
+```bash
 git checkout main
 git pull origin main
-
+```
 ✅ Tujuannya: Pastikan kamu kerja dari kode terbaru.
 
 ---
 
 ### 2. Buat Branch Baru untuk Kerjaanmu
-bash
+```bash
 git checkout -b fitur/onboarding
-
+```
 ✅ Gunakan nama branch sesuai tugas yang kamu kerjakan.
 
 ---
@@ -42,11 +42,11 @@ git checkout -b fitur/onboarding
 ---
 
 ### 4. Simpan Perubahan dan Upload
-bash
+```bash
 git add .
 git commit -m "Tambah halaman onboarding dengan animasi"
 git push origin fitur/onboarding
-
+```
 ✅ Gunakan pesan commit yang jelas.
 
 ---
@@ -61,11 +61,11 @@ git push origin fitur/onboarding
 ---
 
 ### 6. Setelah Merge, Hapus Branch
-bash
+```bash
 git checkout main
 git pull origin main
 git branch -d fitur/onboarding
-
+```
 ✅ Supaya workspace kamu tetap bersih
 
 ---
