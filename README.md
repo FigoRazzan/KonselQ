@@ -1,4 +1,4 @@
 # KonselQ
 
-Saling support, saling bantu, saling develop
-Baca CONTRIBUTING.md sebelum kerja
+Saling support, saling bantu, saling develop.  
+Baca [CONTRIBUTING.md](./CONTRIBUTING.md) sebelum kerja.
