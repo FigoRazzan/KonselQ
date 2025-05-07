@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:konselq/screens/onboarding/onboarding_page1.dart' as onboarding_page1;
+import 'package:konselq/screens/onboarding/onboarding_page3.dart' as onboarding_page3;
+import '../homepage.dart';
 
 class OnboardingPage2 extends StatelessWidget {
   const OnboardingPage2({super.key});
@@ -115,7 +117,7 @@ class OnboardingPage2 extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const onboarding_page1.OnboardingPage(),
+                            builder: (context) => const onboarding_page1.OnboardingPage1(),
                           ),
                         );
                       },
@@ -154,19 +156,19 @@ class OnboardingPage2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 24,
+                          width: 8,
                           height: 8,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF002979),
+                            color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
                         const SizedBox(width: 8),
                         Container(
-                          width: 8,
+                          width: 24,
                           height: 8,
                           decoration: BoxDecoration(
-                            color: Colors.grey[300],
+                            color: const Color(0xFF002979),
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
@@ -188,7 +190,12 @@ class OnboardingPage2 extends StatelessWidget {
                         Expanded(
                           child: OutlinedButton(
                             onPressed: () {
-                              // TODO: Skip action
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                              );
                             },
                             style: OutlinedButton.styleFrom(
                               backgroundColor: const Color(0xFFF3F4F6),
@@ -211,7 +218,12 @@ class OnboardingPage2 extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              // TODO: Next action
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const onboarding_page3.OnboardingPage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFFFFD10B),

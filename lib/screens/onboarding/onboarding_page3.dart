@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'onboarding_page2.dart';
+import '../homepage.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -74,7 +76,7 @@ class OnboardingPage extends StatelessWidget {
                           const SizedBox(height: 32),
                           // Title
                           const Text(
-                            'Konseling yang Mendukung\ndan Memahami',
+                            'Dukungan Beragam untuk Kesehatan Mental Anda',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 24,
@@ -86,7 +88,7 @@ class OnboardingPage extends StatelessWidget {
                           const SizedBox(height: 16),
                           // Description
                           const Text(
-                            'KonselQ siap memberikan dukungan dan solusi untuk masalah Anda. Temukan cara untuk meningkatkan kesehatan mental dan kesejahteraan Anda.',
+                            'KonselQ menyediakan berbagai sumber daya untuk membantu Anda mengatasi tantangan emosional.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
@@ -120,10 +122,20 @@ class OnboardingPage extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Color(0xFF002979),
+                      child: Center(
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Color(0xFF002979),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const OnboardingPage2(),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -147,6 +159,24 @@ class OnboardingPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
                           width: 24,
                           height: 8,
                           decoration: BoxDecoration(
@@ -154,59 +184,21 @@ class OnboardingPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Container(
-                          width: 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
                       ],
                     ),
                     const SizedBox(height: 24),
-                    // Lewati & Lanjut buttons side by side
+                    // Remove Lewati button and make Lanjut button full-width
                     Row(
                       children: [
                         Expanded(
-                          child: OutlinedButton(
-                            onPressed: () {
-                              // TODO: Handle skip button
-                            },
-                            style: OutlinedButton.styleFrom(
-                              backgroundColor: const Color(0xFFF3F4F6), // light grey
-                              foregroundColor: const Color(0xFF002979),
-                              side: BorderSide.none,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                            ),
-                            child: const Text(
-                              'Lewati',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF002979),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              // TODO: Handle next button
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFFFFD10B), // yellow
