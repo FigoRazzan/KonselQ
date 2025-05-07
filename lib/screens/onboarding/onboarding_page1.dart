@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:konselq/screens/onboarding/onboarding_page2.dart';
+import '../homepage.dart';
 
-class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({super.key});
+class OnboardingPage1 extends StatelessWidget {
+  const OnboardingPage1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -154,7 +155,12 @@ class OnboardingPage extends StatelessWidget {
                         Expanded(
                           child: OutlinedButton(
                             onPressed: () {
-                              // TODO: Handle skip button
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomePage(),
+                                ),
+                              );
                             },
                             style: OutlinedButton.styleFrom(
                               backgroundColor: const Color(0xFFF3F4F6), // light grey
